@@ -3,16 +3,31 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>WAWA | World Aboriginal Wrestling Alliance</title>
   <meta name="description" content="Official site of the World Aboriginal Wrestling Alliance (WAWA).">
+
+  <!-- Favicon / Branding -->
   <link rel="icon" href="/assets/logo.png" type="image/png">
-  <!-- BUILD v3 -->
+
+  <!-- Social preview (thumbnail when you share the link) -->
+  <meta property="og:title" content="WAWA — World Aboriginal Wrestling Alliance">
+  <meta property="og:description" content="Official site of the World Aboriginal Wrestling Alliance (WAWA).">
+  <meta property="og:url" content="https://wawawrestling.com/">
+  <meta property="og:image" content="https://wawawrestling.com/assets/logo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://wawawrestling.com/assets/logo.png">
+
+  <!-- Styles (cache-busted) -->
   <link rel="stylesheet" href="/assets/styles.css?v=3">
 </head>
 <body>
 <header class="header">
   <div class="container nav">
-    <a class="brand" href="/"><img src="/assets/logo.png" alt="WAWA logo" onerror="this.style.display='none'"><span>WAWA</span></a>
+    <a class="brand" href="/">
+      <img src="/assets/logo.png" alt="WAWA logo" onerror="this.style.display='none'">
+      <span>WAWA</span>
+    </a>
     <div class="spacer"></div>
     <nav class="navlinks">
       <a href="/news.html">News</a>
@@ -24,8 +39,36 @@
     <div class="burger" aria-label="menu" role="button">☰</div>
   </div>
 </header>
-<section class="hero"><div class="container wrap">
-  <h1 class="title">World Aboriginal Wrestling Alliance</h1>
-  <p class="sub">WEBSITE UNDER CONSTRUCTION</p>
-</div></section>
-</body></html>
+
+<section class="hero">
+  <div class="container wrap">
+    <h1 class="title">World Aboriginal Wrestling Alliance</h1>
+    <p class="sub">WEBSITE UNDER CONSTRUCTION</p>
+
+    <!-- Multilingual lines (optional) -->
+    <div class="tag" style="margin-top:12px">
+      <span lang="to">ʻUepisaiti ʻoku kei langa.</span><br>
+      <span lang="sm">O LOʻO FAUSIA LE ‘UPEGA TAFA‘ILAGI.</span><br>
+      <span lang="tvl">E FAKATŪ TE SAITE.</span>
+    </div>
+  </div>
+</section>
+
+<!-- Sticky contact bar (shows as you scroll) -->
+<div class="sticky-contact">
+  <a href="/contact.html" style="color:inherit;text-decoration:underline">Contact Message</a>
+  <button class="sticky-close" aria-label="Close">×</button>
+</div>
+
+<!-- Scripts -->
+<script src="/assets/script.js" defer></script>
+<script>
+  // Fallback: close button for the sticky bar (in case script.js doesn't include it)
+  window.addEventListener('DOMContentLoaded', () => {
+    const bar = document.querySelector('.sticky-contact');
+    const btn = document.querySelector('.sticky-close');
+    if (bar && btn) btn.addEventListener('click', () => bar.remove());
+  });
+</script>
+</body>
+</html>
